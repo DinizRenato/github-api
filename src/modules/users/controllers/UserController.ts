@@ -1,10 +1,12 @@
 import { Request, Response } from 'express';
+import api_config from 'src/shared/util/api_config';
 import { RepositoriesRepository } from '../infra/repositories/RepositoriesRepository';
 import { UsersRepository } from '../infra/repositories/UsersRepository';
 import GetUserDetailByUserNameService from '../services/GetUserDetailByUserNameService';
 import GetUserRepositoriesByUserNameService from '../services/GetUserRepositoriesByUserNameService';
 
 import ListUsersService from '../services/ListUsersService';
+
 
 export default class UserController {
 
@@ -17,7 +19,7 @@ export default class UserController {
             data: list,
             links: [
                 {
-                    "next_page": `http://localhost:3333/api/users?since=${list[list.length - 1].id}`
+                    "next_page": `${api_config.urls.API_URL}api/users?since=${list[list.length - 1].id}`
                 }
             ]
         });
