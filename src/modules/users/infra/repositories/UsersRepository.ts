@@ -1,5 +1,5 @@
 import { UsersGithub } from './../../clients/UsersGithub';
-import { IUser } from '@modules/users/domain/models/IUser';
+import { IUser } from '../../../../modules/users/domain/models/IUser';
 import { IUserRepository } from './../../domain/repositories/IUserRepository';
 import { UserDetailByUsernameGithub } from '../../../../modules/users/clients/UserDetailByUsernameGithub';
 
