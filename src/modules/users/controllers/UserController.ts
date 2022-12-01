@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import api_config from 'src/shared/util/api_config';
 import { RepositoriesRepository } from '../infra/repositories/RepositoriesRepository';
 import { UsersRepository } from '../infra/repositories/UsersRepository';
 import GetUserDetailByUserNameService from '../services/GetUserDetailByUserNameService';
@@ -19,7 +18,7 @@ export default class UserController {
             data: list,
             links: [
                 {
-                    "next_page": `${api_config.urls.API_URL}api/users?since=${list[list.length - 1].id}`
+                    "next_page": `${process.env.HEROKU_APP_URL}api/users?since=${list[list.length - 1].id}`
                 }
             ]
         });
