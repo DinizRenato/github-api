@@ -1,5 +1,5 @@
 
-import { app } from ".";
+import { app } from "./shared/infra/http";
 
 const port = process.env.PORT || 3333;
 
