@@ -10,6 +10,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (request: Request, response: Response) => {
+    response.send({ message: 'Github API' });
+})
+
 app.use(routes);
 
 app.use(
